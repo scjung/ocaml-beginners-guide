@@ -1,0 +1,65 @@
+\documentclass[a4paper]{oblivoir}
+
+\usepackage{pdfsync}
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[unicode,pdftex]{hyperref}
+  \input glyphtounicode\pdfgentounicode=1
+\else
+  \usepackage[unicode,divpdfm]{hyperref}
+\fi
+
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{beramono}
+
+\usepackage{amsmath, amssymb}
+\usepackage{color}
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\small\ttfamily,
+  keywordstyle=\ttfamily\bfseries,
+  commentstyle=\color[gray]{0.4},
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=10pt,
+  escapechar=\%,
+  frameround=tttt,
+  frame=trbl,
+  rulecolor=\color[gray]{0.9},
+  moredelim=[is][\bfseries]{~}{~},
+  backgroundcolor=\color[gray]{0.97},
+  aboveskip=1em,
+  belowskip=1em
+}
+
+\usepackage{todonotes}
+\newcommand{\TODO}[1]{\todo[inline,color=green!40]{TODO: #1}}
+
+% allow subsubsections
+\setcounter{secnumdepth}{3}
+
+\input{macro}
+
+\begin{document}
+
+\pagestyle{hangul}
+
+\input{title}
+\input{toc}
+\input{quote}
+\input{intro}
+\input{ocaml}
+\input{install}
+\input{ide}
+\input{ref}
+
+\listoftodos
+
+\end{document}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
